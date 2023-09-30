@@ -18,13 +18,15 @@ def median_fits(files):
     hdulist.close()
   
   # stack image arrays in a 3D array to calculate median
-  FITS_3D_arr = np.dstack(FITS_list)
+  arr = np.dstack(FITS_list)
 
   # median 
-  median = np.median(FITS_3D_arr, axis=2)
+  median = np.median(arr, axis=2)
 
   # memory needed 
-  memory = FITS_3D_arr.nbytes
+  memory = arr.nbytes
+  # convert to kB 
+  memory /= 1024
 
   # stop timer 
   stop = time.time() - start
