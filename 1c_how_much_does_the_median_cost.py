@@ -11,14 +11,14 @@ def median_fits(files):
   start = time.time()
 
   # read FITS files and store in list
-  data = []
+  FITS_list = []
   for file in files:
     hdulist = fits.open(file)
-    data.append(hdulist[0].data)
+    FITS_list.append(hdulist[0].data)
     hdulist.close()
   
   # stack image arrays in a 3D array to calculate median
-  arr = np.dstack(data)
+  arr = np.dstack(FITS_list)
 
   # median 
   median = np.median(arr, axis=2)
