@@ -11,20 +11,20 @@ def median_fits(files):
   start = time.time()
 
   # read FITS files and store in list
-  FITS_list = []
+  data = []
   for file in files:
     hdulist = fits.open(file)
-    FITS_list.append(hdulist[0].data)
+    data.append(hdulist[0].data)
     hdulist.close()
   
   # stack image arrays in a 3D array to calculate median
-  FITS_3D_arr = np.dstack(FITS_list)
+  arr = np.dstack(data)
 
   # median 
-  median = np.median(FITS_3D_arr, axis=2)
+  median = np.median(arr, axis=2)
 
   # memory needed 
-  memory = FITS_3D_arr.nbytes
+  memory = arr.nbytes
 
   # stop timer 
   stop = time.time() - start
