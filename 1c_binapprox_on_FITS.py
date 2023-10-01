@@ -13,20 +13,20 @@ from astropy.io import fits
 from helper import running_stats
 
 
-def median_bins_fits(filenames, B):
-  # Calculate the mean and standard dev
-  mean, std = running_stats(filenames)
+def median_bins_fits(files, B):
+  # Calculate the mean and standard dev using function in helper.py
+  mean, std = running_stats(files)
     
   dim = mean.shape # Dimension of the FITS file arrays
     
   # Initialise bins
   left_bin = np.zeros(dim)
   bins = np.zeros((dim[0], dim[1], B))
-  bin_width = 2 * std / B 
+  width = 2 * std / B 
 
   # Loop over all FITS files
-  for filename in filenames:
-      hdulist = fits.open(filename)
+  for file in files:
+      hdulist = fits.open(file)
       data = hdulist[0].data
 
       # Loop over every point in the 2D array
@@ -40,22 +40,21 @@ def median_bins_fits(filenames, B):
             left_bin[i, j] += 1
                 
           elif value >= mean_ - std_ and value < mean_ + std_:
-            bin = int((value - (mean_ - std_))/bin_width[i, j])
+            bin = int((value - (mean_ - std_))/width[i, j])
             bins[i, j, bin] += 1
 
   return mean, std, left_bin, bins
 
 
-def median_approx_fits(filenames, B):
-  mean, std, left_bin, bins = median_bins_fits(filenames, B)
+def median_approx_fits(files, B):
+  mean, std, left_bin, bins = median_bins_fits(files, B)
     
   dim = mean.shape # Dimension of the FITS file arrays
-    
-  # Position of the middle element over all files
-  N = len(filenames)
-  mid = (N + 1)/2
+  
+  n = len(files)
+  midpoint = (n + 1)/2
 	
-  bin_width = 2*std / B
+  width = 2*std / B
   # Calculate the approximated median for each array element
   median = np.zeros(dim)   
   for i in range(dim[0]):
@@ -63,10 +62,10 @@ def median_approx_fits(filenames, B):
       count = left_bin[i, j]
       for b, bincount in enumerate(bins[i, j]):
         count += bincount
-        if count >= mid:
+        if count >= midpoint:
           # Stop when the cumulative count exceeds the midpoint
           break
-      median[i, j] = mean[i, j] - std[i, j] + bin_width[i, j]*(b + 0.5)
+      median[i, j] = mean[i, j] - std[i, j] + width[i, j]*(b + 0.5)
       
   return median
 
