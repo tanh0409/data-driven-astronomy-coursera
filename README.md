@@ -12,7 +12,7 @@ The schedule of the course and scope of each exercise are as follow:
 
 2. Week 2 - Introduction to supermassive black holes and implementing cross-matching algorithm to combine radio and optical information to investigate how supermassive black holes regulate star formation
 
-   2a - Exercise to import two different types of catalogues (AT20G BSS and SuperCOSMOS catalogues) and implement a crossmatching algorithm (simple for loop logic) to compare each object from the first catalogue to each object from the second object, to find closest matches within a given radius and their angular distance.
+   2a - Exercise to import two different types of catalogues (AT20G BSS and SuperCOSMOS catalogues) and implement a crossmatching algorithm (simple for loop logic) to find out which were associated with the same physical object in space, to find closest matches within a given radius and their angular distance.
    NOTE: This is an inefficient algorithm as it can take a _very_ long time with bigger catalogues.
 
    2b - Exercise to crossmatch with k-d trees using the astropy module.
