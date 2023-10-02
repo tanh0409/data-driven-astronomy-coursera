@@ -18,3 +18,10 @@ The schedule of the course and scope of each exercise are as follow:
    2b - Exercise to crossmatch with k-d trees using the astropy module.
 
 3. Week 3 - Introduction to exoplanets and use SQL to explore a database of exoplanets to determine how many earth sized exoplanets line the habitable zone of their host star.
+
+4. Week 4 - Introduction to the lifecycle of stars and set up a database to store combined Hypothos data with cluster membership list for VizieR which will give the probability of each star being physically asssociated with that cluster.
+
+   - A schema to represent the data is also designed as part of the exercises of this week.
+   - This week's exercises also involve combining SQL and Python
+
+5. Week 5 -
