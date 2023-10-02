@@ -16,3 +16,5 @@ The schedule of the course and scope of each exercise are as follow:
    NOTE: This is an inefficient algorithm as it can take a _very_ long time with bigger catalogues.
 
    2b - Exercise to crossmatch with k-d trees using the astropy module.
+
+3. Week 3 - Introduction to exoplanets and use SQL to explore a database of exoplanets to determine how many earth sized exoplanets line the habitable zone of their host star.
