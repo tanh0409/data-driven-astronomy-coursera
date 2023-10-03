@@ -30,4 +30,4 @@ The schedule of the course and scope of each exercise are as follow:
 
    - 5b - Exercises to validate and improve algorithms from 5a exercises (using k-fold cross validation, constraining tree depth to account for overfitting) to estimate redshifts using regression.
 
-6. Week 6 -
+6. Week 6 - Introduction to types of galaxies and using machine learning to classify galaxies
