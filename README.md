@@ -1,6 +1,6 @@
 # Data Driven Astronomy - Python & SQL Exercises
 
-This repository contains exercises from the "Data Driven Astronomy" course offered by the University of Sydney
+This repository contains exercises from the "Data Driven Astronomy" course offered by the University of Sydney.
 
 The schedule of the course and scope of each exercise are as follow:
 
