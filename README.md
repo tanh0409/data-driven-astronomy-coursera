@@ -30,4 +30,10 @@ The schedule of the course and scope of each exercise are as follow:
 
    - 5b - Exercises to validate and improve algorithms from 5a exercises (using k-fold cross validation, constraining tree depth to account for overfitting) to estimate redshifts using regression.
 
-6. Week 6 - Introduction to types of galaxies and using machine learning to classify galaxies
+6. Week 6 - Introduction to types of galaxies and using machine learning to classify galaxies (exploring ensemble learning, random forest classifiers).
+
+   - 6a - Exercises to use machine learning to classify galaxies intro three types (ellipticals, spirals or galactic mergers) based on their observed properties.
+
+# Reference
+
+The full course content can be found [here](https://www.coursera.org/learn/data-driven-astronomy/).
